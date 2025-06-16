@@ -1,0 +1,63 @@
+{
+  "name": "@upstash/docusaurus-theme-ai-search",
+  "version": "1.0.0",
+  "description": "Upstash search component for Docusaurus.",
+  "main": "lib/index.js",
+  "sideEffects": [
+    "*.css"
+  ],
+  "exports": {
+    "./client": {
+      "types": "./lib/client/index.d.ts",
+      "default": "./lib/client/index.js"
+    },
+    ".": {
+      "types": "./src/theme-ai-search.d.ts",
+      "default": "./lib/index.js"
+    }
+  },
+  "types": "src/theme-ai-search.d.ts",
+  "publishConfig": {
+    "access": "public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/upstash/docusaurus-theme-ai-search-upstash.git"
+  },
+  "license": "MIT",
+  "bin": {
+    "index-docs-upstash": "./lib/scripts/indexDocs.js"
+  },
+  "scripts": {
+    "build": "tsc --build && node ./admin/scripts/copyUntypedFiles.mjs && prettier --config ./.prettierrc --write \"lib/theme/**/*.js\"",
+    "watch": "run-p -c copy:watch build:watch",
+    "build:watch": "tsc --build --watch",
+    "copy:watch": "node ./admin/scripts/copyUntypedFiles.mjs --watch"
+  },
+  "dependencies": {
+    "@docusaurus/core": "^3.7.0",
+    "@docusaurus/logger": "3.7.0",
+    "@docusaurus/plugin-content-docs": "3.7.0",
+    "@docusaurus/theme-common": "3.7.0",
+    "@docusaurus/theme-translations": "3.7.0",
+    "@docusaurus/utils": "3.7.0",
+    "@docusaurus/utils-validation": "3.7.0",
+    "@mdx-js/react": "^3.1.0",
+    "@upstash/search": "^0.1.2",
+    "@upstash/vector": "^1.2.0",
+    "clsx": "^2.0.0",
+    "react-markdown": "^9.0.3",
+    "utility-types": "^3.10.0"
+  },
+  "devDependencies": {
+    "@docusaurus/module-type-aliases": "3.7.0",
+    "prettier": "^3.5.1"
+  },
+  "peerDependencies": {
+    "react": "^18.0.0 || ^19.0.0",
+    "react-dom": "^18.0.0 || ^19.0.0"
+  },
+  "engines": {
+    "node": ">=18.0"
+  }
+}

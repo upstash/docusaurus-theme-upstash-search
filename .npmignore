@@ -1,0 +1,11 @@
+.tsbuildinfo*
+tsconfig*
+__tests__
+.git
+.gitignore
+.prettierrc
+.prettierignore
+admin/
+node_modules/
+package-lock.json
+.env.example
