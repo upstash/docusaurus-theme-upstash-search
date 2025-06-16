@@ -48,7 +48,7 @@ The default index name is `docusaurus`. You can override it by setting the `upst
 
 You can fetch your URL and read only token from [Upstash Console](https://upstash.com/console). **Make sure to use the read only token!**
 
-If you do not have a vector index yet, you can create one from [Upstash Console](https://upstash.com/console). Make sure to use Upstash generated embedding model.
+If you do not have a search database yet, you can create one from [Upstash Console](https://upstash.com/console). Make sure to use Upstash generated embedding model.
 
 ### Indexing Your Docs
 
