@@ -32,7 +32,7 @@ describe('validateThemeConfig', () => {
       aiChatApiEndpoint: 'https://example-function.upstash.io',
       upstashSearchRestUrl: 'https://example-rest.upstash.io/v1',
       upstashSearchReadOnlyRestToken: 'token',
-      upstashSearchIndexNamespace: 'docs',
+      upstashSearchIndexName: 'docs',
     },
   };
 
@@ -84,11 +84,11 @@ describe('validateThemeConfig', () => {
     ).toThrowErrorMatchingInlineSnapshot(`""upstash.upstashSearchReadOnlyRestToken" is required"`);
   });
 
-  it('missing upstashSearchIndexNamespace', () => {
-    const {upstashSearchIndexNamespace, ...rest} = validConfig.upstash;
+  it('missing upstashSearchIndexName', () => {
+    const {upstashSearchIndexName, ...rest} = validConfig.upstash;
     expect(() =>
       testValidateThemeConfig({upstash: rest}),
-    ).toThrowErrorMatchingInlineSnapshot(`""upstash.upstashSearchIndexNamespace" is required"`);
+    ).toThrowErrorMatchingInlineSnapshot(`""upstash.upstashSearchIndexName" is required"`);
   });
 
   it('invalid enableAiChat type', () => {

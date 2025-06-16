@@ -5,7 +5,7 @@
  * LICENSE file in the root directory of this source tree.
  */
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
-import type {ThemeConfig} from '@upstash/docusaurus-theme-ai-search';
+import type {ThemeConfig} from '@upstash/docusaurus-theme-upstash-search';
 
 export function useUpstashThemeConfig(): ThemeConfig {
   const {

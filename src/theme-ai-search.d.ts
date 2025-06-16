@@ -5,7 +5,7 @@
  * LICENSE file in the root directory of this source tree.
  */
 
-declare module '@upstash/docusaurus-theme-ai-search' {
+declare module '@upstash/docusaurus-theme-upstash-search' {
   import type {DeepPartial} from 'utility-types';
 
   type ThemeConfigUpstash = {
@@ -13,7 +13,7 @@ declare module '@upstash/docusaurus-theme-ai-search' {
     aiChatApiEndpoint: string;
     upstashSearchRestUrl: string;
     upstashSearchReadOnlyRestToken: string;
-    upstashSearchIndexNamespace: string;
+    upstashSearchIndexName: string;
   };
 
   export type ThemeConfig = {
@@ -23,8 +23,8 @@ declare module '@upstash/docusaurus-theme-ai-search' {
   export type UserThemeConfig = DeepPartial<ThemeConfig>;
 }
 
-declare module '@upstash/docusaurus-theme-ai-search/client' {
-  import type {ThemeConfig} from '@upstash/docusaurus-theme-ai-search';
+declare module '@upstash/docusaurus-theme-upstash-search/client' {
+  import type {ThemeConfig} from '@upstash/docusaurus-theme-upstash-search';
 
   export function useUpstashThemeConfig(): ThemeConfig;
 }

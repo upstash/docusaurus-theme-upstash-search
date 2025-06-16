@@ -1,7 +1,7 @@
 {
-  "name": "@upstash/docusaurus-theme-ai-search",
+  "name": "@upstash/docusaurus-theme-upstash-search",
   "version": "1.0.0",
-  "description": "Upstash search component for Docusaurus.",
+  "description": "Upstash Search component for Docusaurus.",
   "main": "lib/index.js",
   "sideEffects": [
     "*.css"

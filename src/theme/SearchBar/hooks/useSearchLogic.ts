@@ -3,10 +3,10 @@ import { SearchResult } from '../types';
 import { useDebounce } from './useDebounce';
 import { Search } from '@upstash/search';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
-import type { ThemeConfig } from '@upstash/docusaurus-theme-ai-search';
+import type { ThemeConfig } from '@upstash/docusaurus-theme-upstash-search';
 import type { DocusaurusContext } from '@docusaurus/types';
 
-export const DEFAULT_INDEX_NAMESPACE = '@upstash/docusaurus-theme-ai-search';
+const DEFAULT_INDEX_NAME = 'docusaurus';
 
 export function useSearchLogic() {
   const [searchQuery, setSearchQuery] = useState('');
@@ -19,10 +19,10 @@ export function useSearchLogic() {
   const themeConfig = siteConfig.themeConfig as ThemeConfig;
   const themeConfigFields = themeConfig.upstash ?? {};
 
-  const { index, namespace } = useMemo(() => {
+  const { index, indexName } = useMemo(() => {
     const searchUrl = themeConfigFields.upstashSearchRestUrl;
     const searchToken = themeConfigFields.upstashSearchReadOnlyRestToken;
-    const searchNamespace = themeConfigFields.upstashSearchIndexNamespace ?? DEFAULT_INDEX_NAMESPACE;
+    const searchNamespace = themeConfigFields.upstashSearchIndexName ?? DEFAULT_INDEX_NAME;
 
     if (!searchUrl || !searchToken) {
       throw new Error('Upstash Search REST URL and Read-only token are required in themeConfig.upstash');
@@ -37,7 +37,7 @@ export function useSearchLogic() {
 
     return {
       index,
-      namespace: searchNamespace,
+      indexName: searchNamespace,
     };
   }, [themeConfigFields]);
 
@@ -70,7 +70,7 @@ export function useSearchLogic() {
     } finally {
       setIsLoading(false);
     }
-  }, [index, namespace]);
+  }, [index]);
 
   useEffect(() => {
     performSearch(debouncedSearchQuery);

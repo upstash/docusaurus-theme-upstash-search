@@ -17,7 +17,7 @@ export const Schema = Joi.object<ThemeConfig>({
     aiChatApiEndpoint: Joi.string(),
     upstashSearchRestUrl: Joi.string().required(),
     upstashSearchReadOnlyRestToken: Joi.string().required(),
-    upstashSearchIndexNamespace: Joi.string().required(),
+    upstashSearchIndexName: Joi.string().required(),
   })
     .label('themeConfig.upstash')
     .required()

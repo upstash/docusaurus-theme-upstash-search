@@ -1,4 +1,4 @@
-# `@upstash/docusaurus-theme-ai-search`
+# `@upstash/docusaurus-theme-upstash-search`
 
 AI-powered search and chat component for Docusaurus using Upstash Search.
 
@@ -14,12 +14,14 @@ AI-powered search and chat component for Docusaurus using Upstash Search.
 
 See it in action with `Jest` documentation [here](https://jest-website-example.netlify.app) or you can watch the demo video that showcases hybrid search and AI chat capabilities.
 
+[![Demo Video - Click to Play](https://img.youtube.com/vi/uAwmRb1vEfU/0.jpg)](https://youtu.be/uAwmRb1vEfU)
+
 ## Installation
 
 To install the package, run:
 
 ```bash
-npm install @upstash/docusaurus-theme-ai-search
+npm install @upstash/docusaurus-theme-upstash-search
 ```
 
 ### Enabling the Searchbar
@@ -28,7 +30,7 @@ To enable the searchbar, add the following to your docusaurus config file:
 
 ```js
 export default {
-  themes: ['@upstash/docusaurus-theme-ai-search'],
+  themes: ['@upstash/docusaurus-theme-upstash-search'],
   // ...
   themeConfig: {
     // ...
@@ -36,13 +38,13 @@ export default {
       enableAiChat: false, // Set to true to enable AI chat
       upstashSearchRestUrl: "UPSTASH_SEARCH_REST_URL",
       upstashSearchReadOnlyRestToken: "UPSTASH_SEARCH_READ_ONLY_REST_TOKEN",
-      upstashSearchIndexNamespace: "UPSTASH_SEARCH_INDEX_NAMESPACE",
+      upstashSearchIndexName: "UPSTASH_SEARCH_INDEX_NAME",
     },
   },
 };
 ```
 
-The default index name is `@upstash/docusaurus-theme-ai-search`. You can override it by setting the `upstashSearchIndexNamespace` option.
+The default index name is `docusaurus`. You can override it by setting the `upstashSearchIndexName` option.
 
 You can fetch your URL and read only token from [Upstash Console](https://upstash.com/console). **Make sure to use the read only token!**
 
@@ -55,7 +57,7 @@ To index your documentation, create a `.env` file with the following environment
 ```bash
 UPSTASH_SEARCH_REST_URL=
 UPSTASH_SEARCH_REST_TOKEN=
-UPSTASH_SEARCH_INDEX_NAMESPACE=
+UPSTASH_SEARCH_INDEX_NAME=
 DOCS_PATH=
 ```
 
@@ -63,7 +65,7 @@ You can fetch your URL and token from [Upstash Console](https://upstash.com/cons
 
 The indexing script looks for documentation in the `docs` directory by default. You can specify a different path using the `DOCS_PATH` option.
 
-The default index namespace is `@upstash/docusaurus-theme-ai-search`. You can override it by setting the `UPSTASH_SEARCH_INDEX_NAMESPACE` option. Make sure the namespace you set while indexing matches with your themeConfig `upstashSearchIndexNamespace` option.
+The default index name is `docusaurus`. You can override it by setting the `UPSTASH_SEARCH_INDEX_NAME` option. Make sure the name you set while indexing matches with your themeConfig `upstashSearchIndexName` option.
 
 ### Setting up AI Chat
 

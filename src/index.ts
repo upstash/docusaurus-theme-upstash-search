@@ -15,7 +15,7 @@ export default function themeSearchUpstash(context: LoadContext): Plugin<void> {
   } = context;
 
   return {
-    name: '@upstash/docusaurus-theme-ai-search',
+    name: '@upstash/docusaurus-theme-upstash-search',
 
     getThemePath() {
       return '../lib/theme';
@@ -27,7 +27,7 @@ export default function themeSearchUpstash(context: LoadContext): Plugin<void> {
     getDefaultCodeTranslationMessages() {
       return readDefaultCodeTranslationMessages({
         locale: currentLocale,
-        name: '@upstash/docusaurus-theme-ai-search',
+        name: '@upstash/docusaurus-theme-upstash-search',
       });
     },
 

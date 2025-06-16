@@ -40,11 +40,11 @@ interface ContentChunk {
 }
 
 // Configuration Constants
-const DEFAULT_INDEX_NAMESPACE = '@upstash/docusaurus-theme-ai-search';
+const DEFAULT_INDEX_NAME = 'docusaurus';
 const DEFAULT_DOCS_PATH = 'docs';
-const indexNamespace = process.env.UPSTASH_SEARCH_INDEX_NAMESPACE ?? DEFAULT_INDEX_NAMESPACE;
+const indexName = process.env.UPSTASH_SEARCH_INDEX_NAME ?? DEFAULT_INDEX_NAME;
 const docsPath = process.env.DOCS_PATH ?? DEFAULT_DOCS_PATH;
-console.log('Index namespace:', indexNamespace);
+console.log('Index name:', indexName);
 console.log('Docs path:', docsPath);
 
 // Initialize Upstash Search client
@@ -53,7 +53,7 @@ const searchClient = new Search({
   token: process.env.UPSTASH_SEARCH_REST_TOKEN!,
 });
 
-const index = searchClient.index(indexNamespace)
+const index = searchClient.index(indexName)
 
 /**
  * Utility Functions
@@ -263,7 +263,7 @@ function splitContentIntoChunks(
 async function indexDocs() {
   try {
     console.log('Starting indexing process...');
-    console.log('Using index namespace:', indexNamespace);
+    console.log('Using index:', indexName);
 
     // Find and process markdown files
     console.log('Finding markdown files...');

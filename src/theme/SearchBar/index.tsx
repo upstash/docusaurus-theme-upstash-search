@@ -7,7 +7,7 @@ import React, {
 } from 'react';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import type { DocusaurusContext } from '@docusaurus/types';
-import type { ThemeConfig } from '@upstash/docusaurus-theme-ai-search';
+import type { ThemeConfig } from '@upstash/docusaurus-theme-upstash-search';
 import { useHistory } from '@docusaurus/router';
 import BrowserOnly from '@docusaurus/BrowserOnly';
 import styles from './styles.module.css';
