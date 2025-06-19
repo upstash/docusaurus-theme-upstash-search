@@ -8,12 +8,6 @@ AI-powered search component for Docusaurus using Upstash Search.
 - 🎨 Modern and responsive UI
 - 🌜 Dark/Light mode support
 
-## Demo
-
-See it in action with `Jest` documentation [here](https://jest-website-example.netlify.app) or you can watch the demo video that showcases the search capabilities.
-
-[![Demo Video - Click to Play](https://img.youtube.com/vi/uAwmRb1vEfU/0.jpg)](https://youtu.be/uAwmRb1vEfU)
-
 ## Installation
 
 To install the package, run:
